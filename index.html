@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dynamic Resume</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              margin: 20px;
+          }
+          .resume-section {
+              margin-bottom: 20px;
+          }
+          .resume-section h2 {
+              margin-bottom: 10px;
+              color: #333;
+          }
+          .resume-item {
+              margin-bottom: 10px;
+          }
+      </style>
+  </head>
+  <body>
+      <div id="resume"></div>
+  
+  
+ 
+    <script>
+// resume.js
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Creating the main resume container
+    const resume = document.getElementById('resume');
+
+    // Function to create a section
+    function createSection(title) {
+        const section = document.createElement('div');
+        section.classList.add('resume-section');
+        
+        const heading = document.createElement('h2');
+        heading.textContent = title;
+        section.appendChild(heading);
+        
+        return section;
+    }
+
+    // Function to create a resume item (e.g., experience, education)
+    function createItem(title, details) {
+        const item = document.createElement('div');
+        item.classList.add('resume-item');
+        
+        const itemTitle = document.createElement('h3');
+        itemTitle.textContent = title;
+        item.appendChild(itemTitle);
+        
+        const itemDetails = document.createElement('p');
+        itemDetails.textContent = details;
+        item.appendChild(itemDetails);
+        
+        return item;
+    }
+
+    // Adding sections and items to the resume
+    // Personal Information
+    const personalInfo = createSection('Personal Information');
+    personalInfo.appendChild(createItem('Name', 'AKSHAY'));
+    personalInfo.appendChild(createItem('Email', 'AK.@example.com'));
+    personalInfo.appendChild(createItem('Phone', '6302537466'));
+    resume.appendChild(personalInfo);
+
+    // Experience
+    const experience = createSection('Experience');
+    experience.appendChild(createItem('Software Developer', 'Company A, 2020 - Present'));
+    experience.appendChild(createItem('Junior Developer', 'Company B, 2018 - 2020'));
+    resume.appendChild(experience);
+
+    // Education
+    const education = createSection('Education');
+    education.appendChild(createItem('Bachelor of Science in Computer Science', 'University XYZ, 2014 - 2018'));
+    resume.appendChild(education);
+
+    // Skills
+    const skills = createSection('Skills');
+    skills.appendChild(createItem('Programming Languages', 'JavaScript, Python, Java'));
+    skills.appendChild(createItem('Frameworks', 'React, Angular, Django'));
+    resume.appendChild(skills);
+
+    // Adding some styling
+    resume.style.border = '1px solid #ccc';
+    resume.style.padding = '20px';
+    resume.style.width = '600px';
+    resume.style.margin = '0 auto';
+});
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
